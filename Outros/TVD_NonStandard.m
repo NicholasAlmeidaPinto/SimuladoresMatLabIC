@@ -1,6 +1,8 @@
 clear;
 close;
 clc;
+%Nichoals de Almeida Pinto
+%Simulador TVD sem limitador de fluxo. Coloquei a função de fluxo do NonStandard no lugar.
 disp('Simulador TVD_NonStandard simples 2D');
 disp('------------------------------------')
 %------------------------VALORES INICIAIS----------------------------------
@@ -92,7 +94,7 @@ for x = 1:1:N
         volume = volume + Sw(x,y,tempo);
     end
 end
-fprintf('O volume de agua no reservatorio �: %d', volume);
+fprintf('O volume de agua no reservatorio é: %d', volume);
 %--------------------------------------------------------------------------
 
 %-------------------------------GRAFICO FINAL------------------------------
