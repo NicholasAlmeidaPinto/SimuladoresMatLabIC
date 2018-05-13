@@ -1,8 +1,9 @@
 %UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
-%LABORATÓRIO DE CIÊNCIAS MATEMÁTICAS
+%LABORATÃ“RIO DE CIÃŠNCIAS MATEMÃTICAS
 %PROF NELSON BARBOSA
+%Aluno: Nicholas de Almeida Pinto
 %1.9.3 
-%-----------------------Definir os parâmtros-------------------------------
+%-----------------------Definir os parÃ¢mtros-------------------------------
 y = 0;
 while y == 0
 % clear all;
@@ -22,18 +23,18 @@ volumecelula = 1;
 disp('*N1 = 100                 deltx = 0.003                    *');
 disp('*deltt = 0.0005           delty = 0.003                    *');
 disp('*Viscosidade agua = 1     Viscosidade oleo = 1             *');
-disp('*Animação                 Minmod                           *');
-disp('*Volume de cada célula: 1                                  *');
+disp('*AnimaÃ§Ã£o                 Minmod                           *');
+disp('*Volume de cada cÃ©lula: 1                                  *');
 disp('************************************************************');
 mudarvalores = input('"1" para mudar algum valor acima: ');
 if mudarvalores == 1
-    N1 = input('Entre com a quantidade de células para o eixo x (N1): ');
+    N1 = input('Entre com a quantidade de cÃ©lulas para o eixo x (N1): ');
     deltx = input('Entre com o valor de deltx: ');
     delty = input('Entre com o valor de delty: ');
     deltt = input('Entre com o valor de deltt: ');
-    miw = input('Entre com a viscosidade da água: ');
-    mio = input('Entre com a viscosidade do óleo: ');
-    T3 = input('"1" para normal -- "3" para animação: ');
+    miw = input('Entre com a viscosidade da Ã¡gua: ');
+    mio = input('Entre com a viscosidade do Ã³leo: ');
+    T3 = input('"1" para normal -- "3" para animaÃ§Ã£o: ');
     disp('Limitadores de fluxo')
     disp('1-Superbee   2-Koren')
     disp('3-Muscl      4-Osher')
@@ -41,7 +42,7 @@ if mudarvalores == 1
     disp('7-Leonar     8-Fromm')
     disp('9-Quick')
     escolha=input('limitador de fluxo: ');
-    volumecelula = input('Volume de cada célula: ');
+    volumecelula = input('Volume de cada cÃ©lula: ');
     
 end
 escolhaux = input('Entre com o valor de ux ("10" para aleatorio): ');
@@ -54,19 +55,19 @@ maximo = 1;
     if escolhaporosidade == 2
         escolhafigura = input(' "1" Circulos - "2" Labirinto - "3" Espiral - "4" Retangulos: ');
     elseif escolhaporosidade > 2
-        disp('   Mín = 0.3          Máx = 1')
-        esc = input('   1 para mudar min ou máx: ');
+        disp('   MÃ­n = 0.3          MÃ¡x = 1')
+        esc = input('   1 para mudar min ou mÃ¡x: ');
         if esc == 1
             minimo = input('    min: ');
             maximo = input('    max: ');
         end
     end
-N2 = input('"1" Poço --  "2" Five Spot -- "3" Line: ');
+N2 = input('"1" PoÃ§o --  "2" Five Spot -- "3" Line: ');
 if N2 == 3
                    disp('   "1" baixo    - "2" cima');
     escolhaline = input('   "3" esquerda - "4" direita: ');    
 end
-escolhadifusiva = input('"1" para simulação com parte difusiva: ');
+escolhadifusiva = input('"1" para simulaÃ§Ã£o com parte difusiva: ');
     if escolhadifusiva==1
         K = 0.0001;
         Ko = 0.001;
@@ -285,8 +286,8 @@ end
 %**************************
 
 
-%--------Injeção-------------|
-if N2 == 1 %Poço            %|
+%--------InjeÃ§Ã£o-------------|
+if N2 == 1 %PoÃ§o            %|
     Sw(1:T1,N1/2,N1/2) = 1; %|
 elseif N2 == 2 %Five Spot   %|
     Sw(1:T1,1,1) = 1;       %|
@@ -741,7 +742,7 @@ for k = 1:1:N1
             else %porosidade constante
                 Sw(j+1,i,k) = Sw(j,i,k)-0.5*(deltt)*Ax(i,k)/(escolhaporosidade) - 0.5*(deltt)*Ay(i,k)/(escolhaporosidade)-difusivafinal(i,k)*deltt/escolhaporosidade;
             end
-    else %não difusivo
+    else %nÃ£o difusivo
             if escolhaporosidade > 1    %porosidade randomica        
                 Sw(j+1,i,k) = Sw(j,i,k)-0.5*(deltt)*Ax(i,k)/porosidade(i,k) - 0.5*(deltt)*Ay(i,k)/porosidade(i,k);
             else %porosidade constante
@@ -749,7 +750,7 @@ for k = 1:1:N1
             end
     end
     
-    %Mudança para plotar grafico
+    %MudanÃ§a para plotar grafico
          if j==T1
              B(i,k)=Sw(T1,i,k);
          end
@@ -758,7 +759,7 @@ end
 end
 
 end
-%--------------------------Volume de óleo retirado-------------------------
+%--------------------------Volume de Ã³leo retirado-------------------------
 volumefinal = 0;
 for i = 1:1:N1
     for k = 1:1:N1
@@ -767,11 +768,11 @@ for i = 1:1:N1
 end
 volumetotal = N1*N1*volumecelula;
 volumeainda = volumetotal-volumefinal;
-fprintf('Volume de óleo obtido: %f\n', volumefinal);
-fprintf('Volume de óleo no reservatorio: %f', volumeainda);
+fprintf('Volume de Ã³leo obtido: %f\n', volumefinal);
+fprintf('Volume de Ã³leo no reservatorio: %f', volumeainda);
 %--------------------------------------------------------------------------
 
-    %grafico da saturação e normal
+    %grafico da saturaÃ§Ã£o e normal
     figure (1)
     R1=linspace(0,1,N1);
     R2=linspace(0,1,N1);
@@ -798,7 +799,7 @@ if escolhaporosidade > 1
 end
     %*******************
 
-    %animação
+    %animaÃ§Ã£o
  if T3 == 3
     for j = 1:1:T1
         for i = 1:1:N1
