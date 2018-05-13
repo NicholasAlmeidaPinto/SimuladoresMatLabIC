@@ -1,9 +1,10 @@
-%Esquema Numérico NonStandard bidimensional
+%Esquema NumÃ©rico NonStandard bidimensional
 %Nelson Machado Barbosa
-%Instituto Politécnico do Rio de Janeiro
+%Nicholas de A. Pinto
+%Instituto PolitÃ©cnico do Rio de Janeiro
 %1.3.1 
 
-%Definir os parâmetros
+%Definir os parÃ¢metros
 y = 0;
 while y == 0
 clear all;
@@ -23,12 +24,12 @@ disp('* Viscosidade agua = 1              Viscosidade oleo = 1   *')
 disp('************************************************************')
 mudarvalores = input('"1" para mudar valores acima: ');
 if mudarvalores == 1
-    N1 = input('Entre com a quantidade de células para o eixo x (N1): ');
+    N1 = input('Entre com a quantidade de cÃ©lulas para o eixo x (N1): ');
     deltx = input('Entre com o valor de deltx: ');
     deltt = input('Entre com o valor de deltt: ');
     delty = input('Entre com o valor de delty: ');
-    miw = input('Entre com a viscosidade da água: ');
-    mio = input('Entre com a viscosidade do óleo: ');
+    miw = input('Entre com a viscosidade da Ã¡gua: ');
+    mio = input('Entre com a viscosidade do Ã³leo: ');
 end
 c=miw/mio;
 alpha = input('Entre com o valor de alpha, 2; 2.08; 2.97: ');
@@ -39,14 +40,14 @@ escolhaporosidade = input('Porosidade (Maior que 1 -> aleatorio): ');
 if escolhaporosidade >1
     min = 0.25;
     max = 1;
-    disp('Mín = 0.2          Máx = 1')
-    esc = input('1 para mudar min ou máx: ');
+    disp('MÃ­n = 0.2          MÃ¡x = 1')
+    esc = input('1 para mudar min ou mÃ¡x: ');
     if esc == 1
         min = input('min: ');
         max = input('max: ');
     end
 end
-escolhainjecao = input('"1" - poço, "2" - Five Spot, "3" - Line: ');
+escolhainjecao = input('"1" - poÃ§o, "2" - Five Spot, "3" - Line: ');
 y = input('"0" para colocar novos valores: ');
 end
 disp('************************************************************')
@@ -99,15 +100,15 @@ phiy=(1/(2*alpha))*((1-exp(-alpha*deltt/delty)));
 disp('Loading...')
 for j=1:1:T1
     
-%-----------------------Mostrar a quanto já foi feito----------------------
+%-----------------------Mostrar a quanto jÃ¡ foi feito----------------------
     if rem(j,50) == 0                                                    %|
         ja = 100*j/T1;                                                   %|
         fprintf('%f', ja); disp('%');                                    %|
     end                                                                  %|
 %--------------------------------^-----------------------------------------
     
-%-------------------------Modo de injeção----------------------------------
-    if escolhainjecao == 1 %poço                                         %|
+%-------------------------Modo de injeÃ§Ã£o----------------------------------
+    if escolhainjecao == 1 %poÃ§o                                         %|
         Sw(N1/2,N1/2,j)=1;                                               %|
     elseif escolhainjecao == 2   %Five Spot                              %|
         Sw(1,1,j) = 1;                                                   %|
@@ -121,7 +122,7 @@ for j=1:1:T1
 %--------------------------------^-----------------------------------------
     
     
-%---------------------------Início dos f__---------------------------------
+%---------------------------InÃ­cio dos f__---------------------------------
     for k=N1:-1:1                    
         for i=N1:-1:1
             
@@ -267,7 +268,7 @@ for j=1:1:T1
     end
  
 end
-%-------------------------------Gráfico Final------------------------------
+%-------------------------------GrÃ¡fico Final------------------------------
 figure (1)                                                               %|
 R1=linspace(0,1,N1);                                                     %|
 %R2=linspace(0,1,N1);                                                     %|
@@ -278,7 +279,7 @@ zlabel('saturation')                                                     %|
 colorbar                                                                 %|
 %--------------------------------------------------------------------------
 
-%-----------------------------Gráfico Porosidade---------------------------
+%-----------------------------GrÃ¡fico Porosidade---------------------------
 if escolhaporosidade > 1                                                 %|
     figure (3)                                                           %|
     surf(R1,R1,porosidade(:,:))                                          %|
@@ -293,7 +294,7 @@ if escolhaporosidade > 1                                                 %|
 end                                                                      %|
 %--------------------------------------------------------------------------
 
-%---------------------------------Animação---------------------------------
+%---------------------------------AnimaÃ§Ã£o---------------------------------
 for j=1:1:T1                                                             %|
     for k=1:1:N1                                                         %|
         for i=1:1:N1                                                     %|
