@@ -1,6 +1,8 @@
 clear;
 close;
 clc;
+%Nicholas de Almeida Pinto
+%Simulador com nova tecnica para simular o avanço bilateral
 disp('Simulador TVD 2D com nova tecnica')
 %------------------------VALORES INICIAIS----------------------------------
 N = 100;
