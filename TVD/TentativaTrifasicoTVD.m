@@ -1,5 +1,5 @@
 %UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
-%LABORATÓRIO DE CIÊNCIAS MATEMÁTICAS
+%LABORATÃ“RIO DE CIÃŠNCIAS MATEMÃTICAS
 %PROF NELSON BARBOSA e Nicholas de A. Pinto
 %1.2.1
 clear all;
@@ -8,14 +8,14 @@ clc;
 %Introduzir as variaveis - 22
 %Introduzir as variaveis - 61
 %Loading - 93
-%Poço de injeção - 102 
+%PoÃ§o de injeÃ§Ã£o - 102 
 %Valores para Limitador de Fluxo - 109
 %Limitadores de Fluxo - 137
 %Sm_ - 214
 %Lamb_ - 233
 %Fluxo - 247
 %Conta final - 258
-%Gráfico final - 275
+%GrÃ¡fico final - 275
 %Animacao - 319
 
 %-------------------------Definir os Parametros-----------------------------
@@ -36,10 +36,10 @@ fprintf('*betag = %f       deltt = %f\n', betag, deltt)
 disp('*Minmod');
 colocarvalores = input('"1" para mudar valores acima: ');
 if colocarvalores == 1
-    N1 = input('    Numero de células: ');
-    mio = input('   Viscosidade óleo: ');
+    N1 = input('    Numero de cÃ©lulas: ');
+    mio = input('   Viscosidade Ã³leo: ');
     miw = input('   Viscosidade agua: ');
-    mig = input('   Viscosidade gás: ');
+    mig = input('   Viscosidade gÃ¡s: ');
     betag = input('     betag: ');
     deltx=input('   deltx: ');
     deltt=input('   deltt: ');
@@ -52,7 +52,7 @@ if colocarvalores == 1
     limitador=input('   Limitador: ');
 end
 T1 = input('Tempo: ');
-grafico = input('Gráfico--> 1-separado, 2-junto: ');
+grafico = input('GrÃ¡fico--> 1-separado, 2-junto: ');
 escolhaporosidade = input('Porosidade (>1 rand): ');
 if escolhaporosidade >1
     minp = 0.45;
@@ -119,7 +119,7 @@ for j=1:1:T1
     end
 %**************************************************************************
 
-%---------------------------Poço de Injeção--------------------------------
+%---------------------------PoÃ§o de InjeÃ§Ã£o--------------------------------
 
         Sw(j,1)=0.85;
         Sg(j,1)=0.15;
@@ -292,7 +292,7 @@ for j=1:1:T1
 end
 %**************************************************************************
 
-%-----------------------------Gráfico Final--------------------------------
+%-----------------------------GrÃ¡fico Final--------------------------------
 for i = 1:1:N1                                                           %|
     Bw(i) = Sw(T1,i);                                                    %|
     Bg(i) = Sg(T1,i);                                                    %|
