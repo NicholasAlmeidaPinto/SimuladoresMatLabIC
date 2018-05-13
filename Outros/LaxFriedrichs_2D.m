@@ -1,6 +1,7 @@
 clear;
 close;
 clc;
+%Nicholas de A. Pinto
 disp('_____Simulador Lax-Friedrichs 2D____');
 disp('====================================')
 %------------------------VALORES INICIAIS----------------------------------
@@ -66,7 +67,7 @@ if 2==0
             volume = volume + Sw(x,y,tempo);
         end
     end
-    fprintf('O volume de agua no reservatorio é: %d', volume);
+    fprintf('O volume de agua no reservatorio Ã©: %d', volume);
 end
 %--------------------------------------------------------------------------
 
