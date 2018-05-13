@@ -1,6 +1,7 @@
 clear;
 close;
 clc;
+%Nicholas de A. Pinto
 disp('_____Simulador Lax-Friedrichs 1D____');
 disp('====================================')
 %------------------------VALORES INICIAIS----------------------------------
@@ -9,7 +10,7 @@ deltx = 1;
 deltt = 0.1; %deltt/deltx <= 1
 mio = 20;
 miw = 10;
-conta = 1; %qual estilo de conta será desejado 1 - teorico , 2 - decrescente
+conta = 1; %qual estilo de conta serÃ¡ desejado 1 - teorico , 2 - decrescente
 tempo = 1000;
 disp('--------------Carregando------------')
 Sw(1:N,1:N,1:tempo) = 0;
@@ -74,7 +75,7 @@ if 2 == 0
     for x = 1:1:N
         volume = volume + Sw(x,tempo);
     end
-    fprintf('O volume de agua no reservatorio é: %d', volume);
+    fprintf('O volume de agua no reservatorio Ã©: %d', volume);
 end
 %--------------------------------------------------------------------------
 
