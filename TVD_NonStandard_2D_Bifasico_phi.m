@@ -1,6 +1,8 @@
 clear;
 close;
 clc;
+%Nicholas de Almeida Pinto
+%Simulador hibrido TVD com função phi do NonStandard substituindo o *[delt t/delt x] (do método TVD)
 
 disp('Simulador TVD/NonStandard Hibrido Bifasico 2D');
 disp('---------------------------------------------');
